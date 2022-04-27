@@ -90,7 +90,8 @@ void APOMinMax<T>::flotar(APOMinMax::nodo i) {
             // Comprobamos que no seamos mayores que nuestro padre (nivel impar => mayor que nosotros)
             if(i > 2 && e > nodos[padre(i)]){
 
-                nodos[i] = nodos[padre(i)];
+                // Cambiamos el elemento de nuestro padre con el nuestro
+                nodos[padre(i)] = nodos[i];
                 i = padre(i);
 
                 // Comprobamos si somos mayores que nuestro abuelo
@@ -120,7 +121,7 @@ void APOMinMax<T>::flotar(APOMinMax::nodo i) {
             // Comprobamos si somos menores que nuestro padre (nivel par => menor que nosotros)
             if(i > 0 && e < nodos[padre(i)]){
 
-                nodos[i] = nodos[padre(i)];
+                nodos[padre(i)] = nodos[i];
                 i = padre(i);
 
                 // Comprobamos si somos menores que nuestro abuelo
